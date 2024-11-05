@@ -63,36 +63,36 @@ Open your web browser and go to http://127.0.0.1:8000/.
 # Testing the Application
 To validate the application, you can follow these steps:
 
-1. Add Seasonal Flavors:
-
-Navigate to /flavors/add/ to add a new flavor.
-Ensure that the flavor appears in the /flavors/ list after adding.
-
-2. Update Seasonal Flavors:
-
-Click on the update link next to a flavor in the /flavors/ list.
-Change the flavor details and save.
-Verify the changes are reflected in the list.
-
-3.Delete Seasonal Flavors:
-
-Click on the delete link next to a flavor in the /flavors/ list.
-Confirm the deletion and ensure the flavor is no longer listed.
-
-4.Manage Ingredient Inventory:
-
-Navigate to /inventory/add/ to add an ingredient.
-Check the inventory list at /inventory/ to ensure it has been added.
-
-5.Add Flavor Suggestions:
-
-Go to /suggestions/add/ to submit a flavor suggestion.
-Ensure the suggestion appears in the /suggestions/ list.
-
-6.Handle Edge Cases:
-
-Try adding a suggestion without selecting a flavor or entering a new flavor name to validate error handling.
-Attempt to delete a flavor or inventory item that does not exist to ensure proper error handling.
+  1. Add Seasonal Flavors:
+  
+  Navigate to /flavors/add/ to add a new flavor.
+  Ensure that the flavor appears in the /flavors/ list after adding.
+  
+  2. Update Seasonal Flavors:
+  
+  Click on the update link next to a flavor in the /flavors/ list.
+  Change the flavor details and save.
+  Verify the changes are reflected in the list.
+  
+  3.Delete Seasonal Flavors:
+  
+  Click on the delete link next to a flavor in the /flavors/ list.
+  Confirm the deletion and ensure the flavor is no longer listed.
+  
+  4.Manage Ingredient Inventory:
+  
+  Navigate to /inventory/add/ to add an ingredient.
+  Check the inventory list at /inventory/ to ensure it has been added.
+  
+  5.Add Flavor Suggestions:
+  
+  Go to /suggestions/add/ to submit a flavor suggestion.
+  Ensure the suggestion appears in the /suggestions/ list.
+  
+  6.Handle Edge Cases:
+  
+  Try adding a suggestion without selecting a flavor or entering a new flavor name to validate error handling.
+  Attempt to delete a flavor or inventory item that does not exist to ensure proper error handling.
 
 # Code Documentation
 The code is structured into views.py, urls.py, and models.py files.
