@@ -168,5 +168,6 @@ docker build -t chocolate-house-app .
 docker run -p 8000:8000 chocolate-house-app
 ```
 This setup will provide you with a Docker container running your Django application, accessible at http://127.0.0.1:8000/
+
 **Contact**
 For questions or suggestions, please contact sahanac629@gmail.com.
