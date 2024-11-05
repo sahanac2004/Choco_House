@@ -77,10 +77,10 @@ This Chocolate House Application provides a variety of features to manage season
 **1. Flavor Management**
 1. Add Flavor: Allows users to add a new flavor by specifying its name and seasonal category. Options include "Spring," "Summer," "Autumn," "Winter," and "No season."
 
-  -- URL: /flavors/add/
-  -- Form Fields:
-       -- Flavor Name: Text input for the name of the flavor.
-       -- Select Seasonal Category: Dropdown to choose the seasonal category.
+  - URL: /flavors/add/
+  - Form Fields:
+       - Flavor Name: Text input for the name of the flavor.
+       - Select Seasonal Category: Dropdown to choose the seasonal category.
 2. View Flavors: Displays a list of all seasonal flavors with options to update or delete each flavor entry.
     
   - URL: /flavors/
