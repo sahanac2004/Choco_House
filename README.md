@@ -94,6 +94,7 @@ This Chocolate House Application provides a variety of features to manage season
   - Form Fields:
        - Flavor Name: Prefilled with the current flavor name.
        - Select Seasonal Category: Dropdown to update the seasonal category.
+
 **2. Ingredient Inventory Management**
 1. Add Inventory: Allows users to add new ingredients to the inventory, including the ingredient name and quantity.
 
@@ -114,6 +115,7 @@ This Chocolate House Application provides a variety of features to manage season
   - Form Fields:
         - Ingredient: Prefilled with the ingredient's name.
         - Quantity: Prefilled with the current quantity.
+
 **3. Customer Flavor Suggestions**
 1. Add Suggestion: Enables customers to submit flavor suggestions, either by selecting an existing flavor or suggesting a new flavor. Users can also specify any allergy concerns associated with the suggestion.
 
