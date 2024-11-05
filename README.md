@@ -24,26 +24,26 @@ This is a simple Django application for managing a fictional chocolate house. Th
    git clone https://github.com/sahanac2004/Choco_House.git
    cd Choco_House
 2. Create a virtual environment (optional but recommended):
-
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
+```
 3. Install the required packages:
-
+```bash
 pip install -r requirements.txt
-
+```
 4. Run database migrations:
-
+```bash
 python manage.py migrate
-
+```
 5.Create a superuser (optional for admin access):
-
+```bash
 python manage.py createsuperuser
-
+```
 6. Run the development server:
-
+```bash
 python manage.py runserver
-Now you can access the application at http://127.0.0.1:8000/.
+```
 
 ##Docker Setup
 This application can also be run in a Docker container. Follow these steps to set it up:
