@@ -1,0 +1,5 @@
+Django>=3.0,<4.0
+# Add other dependencies below as needed
+# Example:
+# djangorestframework
+# psycopg2-binary  # If you're using PostgreSQL instead of SQLite
