@@ -2,13 +2,20 @@
 
 This is a simple Django application for managing a fictional chocolate house. The application allows users to manage seasonal flavor offerings, ingredient inventory, and customer flavor suggestions with allergy concerns. The data is managed using SQLite.
 
+## Problem Statement
+Create a simple Python application for a fictional chocolate house that uses SQLite to manage:
+
+1. Seasonal flavor offerings
+2. Ingredient inventory
+3. Customer flavor suggestions and allergy concerns
+
 ## Features
 
-- Add, view, update, and delete seasonal flavors.
-- Add, view, update, and delete ingredient inventory.
-- Add, view, and delete customer flavor suggestions along with allergy concerns.
+- **Flavor Management:** Add, view, update, and delete seasonal flavors.
+- **Inventory Management:** Add, view, update, and delete ingredient inventory.
+- **Customer Suggestions:** Add, view, and delete customer flavor suggestions, including any allergy information.
 
-## Requirements
+## Requirements or Tech Stack
 
 - Python 3.x
 - Django 3.x or higher
@@ -44,8 +51,10 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+7. Open your browser and navigate to http://127.0.0.1:8000/.
 
-# Docker Setup
+
+# Docker Setup (Optional)
 This application can also be run in a Docker container. Follow these steps to set it up:
 
 1. Build the Docker image:
@@ -62,47 +71,82 @@ Open your web browser and go to http://127.0.0.1:8000/.
 
 # Testing the Application
 To validate the application, you can follow these steps:
+**Features**
+This Chocolate House Application provides a variety of features to manage seasonal flavors, ingredient inventory, and customer flavor suggestions. Below are the details for each section accessible from the homepage:
 
-  1. Add Seasonal Flavors:
-  
-  Navigate to /flavors/add/ to add a new flavor.
-  Ensure that the flavor appears in the /flavors/ list after adding.
-  
-  2. Update Seasonal Flavors:
-  
-  Click on the update link next to a flavor in the /flavors/ list.
-  Change the flavor details and save.
-  Verify the changes are reflected in the list.
-  
-  3.Delete Seasonal Flavors:
-  
-  Click on the delete link next to a flavor in the /flavors/ list.
-  Confirm the deletion and ensure the flavor is no longer listed.
-  
-  4.Manage Ingredient Inventory:
-  
-  Navigate to /inventory/add/ to add an ingredient.
-  Check the inventory list at /inventory/ to ensure it has been added.
-  
-  5.Add Flavor Suggestions:
-  
-  Go to /suggestions/add/ to submit a flavor suggestion.
-  Ensure the suggestion appears in the /suggestions/ list.
-  
-  6.Handle Edge Cases:
-  
-  Try adding a suggestion without selecting a flavor or entering a new flavor name to validate error handling.
-  Attempt to delete a flavor or inventory item that does not exist to ensure proper error handling.
+**1. Flavor Management**
+- Add Flavor: Allows users to add a new flavor by specifying its name and seasonal category. Options include "Spring," "Summer," "Autumn," "Winter," and "No season."
+
+  -- URL: /flavors/add/
+  -- Form Fields:
+       -- Flavor Name: Text input for the name of the flavor.
+       -- Select Seasonal Category: Dropdown to choose the seasonal category.
+- View Flavors: Displays a list of all seasonal flavors with options to update or delete each flavor entry.
+    
+  -- URL: /flavors/
+  -- Table Columns:
+       --  Flavor: Displays the flavor name.
+       --  Seasonal: Shows the seasonal category of each flavor.
+       --  Actions: Links to "Edit" and "Delete" each flavor.
+- Update Flavor: Provides a form to edit a flavor's name and seasonal category.
+
+  -- URL: /flavors/update/<id>/
+  -- Form Fields:
+       -- Flavor Name: Prefilled with the current flavor name.
+       -- Select Seasonal Category: Dropdown to update the seasonal category.
+**2. Ingredient Inventory Management**
+- Add Inventory: Allows users to add new ingredients to the inventory, including the ingredient name and quantity.
+
+   -- URL: /inventory/add/
+   -- Form Fields:
+       --  Ingredient: Text input for the name of the ingredient.
+       --  Quantity: Numeric input for the quantity available.
+- View Inventory: Lists all ingredients with their quantities and provides options to update or delete each item.
+
+  -- URL: /inventory/
+  -- Table Columns:
+       --  Ingredient: The name of each ingredient.
+       --  Quantity: The current quantity in stock.
+       --  Actions: Links to "Edit" and "Delete" each inventory item.
+- Update Inventory Item: Allows users to edit the ingredient name and quantity.
+
+  --  URL: /inventory/update/<id>/
+  --  Form Fields:
+        -- Ingredient: Prefilled with the ingredient's name.
+        -- Quantity: Prefilled with the current quantity.
+**3. Customer Flavor Suggestions**
+- Add Suggestion: Enables customers to submit flavor suggestions, either by selecting an existing flavor or suggesting a new flavor. Users can also specify any allergy concerns associated with the suggestion.
+
+  --  URL: /suggestions/add/
+  --  Form Fields:
+        --  Flavor: Dropdown to select an existing flavor or add a new flavor.
+        --  New Flavor Name: Text input for entering a new flavor name (only visible if "Suggest New Flavor" is selected).
+        --  Allergies: Text area to describe any allergy concerns.
+- View Suggestions: Lists all customer flavor suggestions, showing the suggested flavor and any associated allergies. Users can delete suggestions from this view.
+
+  --  URL: /suggestions/
+  --  Table Columns:
+        --  Flavor: The suggested flavor's name.
+        --  Allergies: Allergy information provided by the customer.
+        --  Actions: Link to delete each suggestion.
+Each of these features is accessible from links on the homepage (index.html) under the following options:
+
+- Add Flavor
+- View Flavors
+- Add Inventory
+- View Inventory
+- Add Suggestion
+- View Suggestions
 
 # Code Documentation
 The code is structured into views.py, urls.py, and models.py files.
-Each function in views.py is documented with comments explaining its purpose and behavior.
-Models in models.py define the database schema for flavors, inventory, and suggestions.
+- views.py: Contains functions for each view in the application, each documented with comments explaining their purpose.
+- models.py: Defines the database schema, with models for flavors, inventory, and suggestions.
 
 # Edge Cases Handled
-Flavor suggestions require a selected flavor or a new flavor name.
-Updating and deleting operations check for the existence of the object before proceeding.
-Error messages are displayed when required fields are not filled.
+- Flavor Suggestions: Users must select an existing flavor or enter a new flavor name when submitting suggestions.
+- Update/Delete Operations: Checks for the existence of an object before allowing updates or deletions.
+- Error Handling: Displays error messages if required fields are missing.
 
 # Acknowledgements
 Django documentation for guidance on building web applications.
@@ -122,3 +166,5 @@ docker build -t chocolate-house-app .
 docker run -p 8000:8000 chocolate-house-app
 ```
 This setup will provide you with a Docker container running your Django application, accessible at http://127.0.0.1:8000/
+**Contact**
+For questions or suggestions, please contact sahanac629@gmail.com.
