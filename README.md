@@ -75,60 +75,60 @@ To validate the application, you can follow these steps:
 This Chocolate House Application provides a variety of features to manage seasonal flavors, ingredient inventory, and customer flavor suggestions. Below are the details for each section accessible from the homepage:
 
 **1. Flavor Management**
-- Add Flavor: Allows users to add a new flavor by specifying its name and seasonal category. Options include "Spring," "Summer," "Autumn," "Winter," and "No season."
+1. Add Flavor: Allows users to add a new flavor by specifying its name and seasonal category. Options include "Spring," "Summer," "Autumn," "Winter," and "No season."
 
   -- URL: /flavors/add/
   -- Form Fields:
        -- Flavor Name: Text input for the name of the flavor.
        -- Select Seasonal Category: Dropdown to choose the seasonal category.
-- View Flavors: Displays a list of all seasonal flavors with options to update or delete each flavor entry.
+2. View Flavors: Displays a list of all seasonal flavors with options to update or delete each flavor entry.
     
-  -- URL: /flavors/
-  -- Table Columns:
-       --  Flavor: Displays the flavor name.
-       --  Seasonal: Shows the seasonal category of each flavor.
-       --  Actions: Links to "Edit" and "Delete" each flavor.
-- Update Flavor: Provides a form to edit a flavor's name and seasonal category.
+  - URL: /flavors/
+  - Table Columns:
+       - Flavor: Displays the flavor name.
+       - Seasonal: Shows the seasonal category of each flavor.
+       - Actions: Links to "Edit" and "Delete" each flavor.
+3. Update Flavor: Provides a form to edit a flavor's name and seasonal category.
 
-  -- URL: /flavors/update/<id>/
-  -- Form Fields:
-       -- Flavor Name: Prefilled with the current flavor name.
-       -- Select Seasonal Category: Dropdown to update the seasonal category.
+  - URL: /flavors/update/<id>/
+  - Form Fields:
+       - Flavor Name: Prefilled with the current flavor name.
+       - Select Seasonal Category: Dropdown to update the seasonal category.
 **2. Ingredient Inventory Management**
-- Add Inventory: Allows users to add new ingredients to the inventory, including the ingredient name and quantity.
+1. Add Inventory: Allows users to add new ingredients to the inventory, including the ingredient name and quantity.
 
-   -- URL: /inventory/add/
-   -- Form Fields:
-       --  Ingredient: Text input for the name of the ingredient.
-       --  Quantity: Numeric input for the quantity available.
-- View Inventory: Lists all ingredients with their quantities and provides options to update or delete each item.
+   - URL: /inventory/add/
+   - Form Fields:
+       -  Ingredient: Text input for the name of the ingredient.
+       -  Quantity: Numeric input for the quantity available.
+2. View Inventory: Lists all ingredients with their quantities and provides options to update or delete each item.
 
-  -- URL: /inventory/
-  -- Table Columns:
-       --  Ingredient: The name of each ingredient.
-       --  Quantity: The current quantity in stock.
-       --  Actions: Links to "Edit" and "Delete" each inventory item.
-- Update Inventory Item: Allows users to edit the ingredient name and quantity.
+  - URL: /inventory/
+  - Table Columns:
+       -  Ingredient: The name of each ingredient.
+       -  Quantity: The current quantity in stock.
+       -  Actions: Links to "Edit" and "Delete" each inventory item.
+3. Update Inventory Item: Allows users to edit the ingredient name and quantity.
 
-  --  URL: /inventory/update/<id>/
-  --  Form Fields:
-        -- Ingredient: Prefilled with the ingredient's name.
-        -- Quantity: Prefilled with the current quantity.
+  - URL: /inventory/update/<id>/
+  - Form Fields:
+        - Ingredient: Prefilled with the ingredient's name.
+        - Quantity: Prefilled with the current quantity.
 **3. Customer Flavor Suggestions**
-- Add Suggestion: Enables customers to submit flavor suggestions, either by selecting an existing flavor or suggesting a new flavor. Users can also specify any allergy concerns associated with the suggestion.
+1. Add Suggestion: Enables customers to submit flavor suggestions, either by selecting an existing flavor or suggesting a new flavor. Users can also specify any allergy concerns associated with the suggestion.
 
-  --  URL: /suggestions/add/
-  --  Form Fields:
-        --  Flavor: Dropdown to select an existing flavor or add a new flavor.
-        --  New Flavor Name: Text input for entering a new flavor name (only visible if "Suggest New Flavor" is selected).
-        --  Allergies: Text area to describe any allergy concerns.
-- View Suggestions: Lists all customer flavor suggestions, showing the suggested flavor and any associated allergies. Users can delete suggestions from this view.
+  - URL: /suggestions/add/
+  - Form Fields:
+        - Flavor: Dropdown to select an existing flavor or add a new flavor.
+        - New Flavor Name: Text input for entering a new flavor name (only visible if "Suggest New Flavor" is selected).
+        -  Allergies: Text area to describe any allergy concerns.
+2. View Suggestions: Lists all customer flavor suggestions, showing the suggested flavor and any associated allergies. Users can delete suggestions from this view.
 
-  --  URL: /suggestions/
-  --  Table Columns:
-        --  Flavor: The suggested flavor's name.
-        --  Allergies: Allergy information provided by the customer.
-        --  Actions: Link to delete each suggestion.
+  - URL: /suggestions/
+  - Table Columns:
+        - Flavor: The suggested flavor's name.
+        - Allergies: Allergy information provided by the customer.
+        - Actions: Link to delete each suggestion.
 Each of these features is accessible from links on the homepage (index.html) under the following options:
 
 - Add Flavor
