@@ -1,0 +1,105 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Suggestions</title>
+</head>
+<body>
+    <h1>Flavor Suggestions</h1>
+    <ul>
+        {% for suggestion in suggestions %}
+            <li>{{ suggestion.flavor }} - Allergies: {{ suggestion.allergies }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Suggestions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #8b4513;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .add-back-links {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        .add-back-links:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Suggestions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Flavor</th>
+                <th>Allergies</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for suggestion in suggestions %}
+                <tr>
+                    <td>{{ suggestion.flavor.name }}</td>
+                    <td>{{ suggestion.allergies }}</td>
+                    <td>
+                        <a href="{% url 'update_suggestion' suggestion.id %}">Edit</a>
+                        <a href="{% url 'delete_suggestion' suggestion.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="add-back-links" href="{% url 'add_suggestion' %}">Add New Suggestion</a>
+    <a class="add-back-links" href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

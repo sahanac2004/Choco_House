@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Suggestion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        select, input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #6f3c10;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Suggestion</h1>
+    <form method="POST" action="{% url 'add_suggestion' %}">
+        {% csrf_token %}
+        <label for="flavor">Flavor:</label>
+        <select id="flavor" name="flavor" required>
+            <option value="">Select Existing Flavor</option>
+            {% for flavor in flavors %}
+            <option value="{{ flavor.id }}">{{ flavor.name }}</option>
+            {% endfor %}
+            <option value="new_flavor">Suggest New Flavor</option>
+        </select>
+        
+        <div id="new_flavor_div" style="display:none;">
+            <label for="new_flavor_name">New Flavor Name:</label>
+            <input type="text" id="new_flavor_name" name="new_flavor_name" placeholder="Enter new flavor name">
+        </div>
+        
+        <label for="allergies">Allergies:</label>
+        <textarea id="allergies" name="allergies" required placeholder="List any allergies..."></textarea>
+        
+        <button type="submit">Add Suggestion</button>
+    </form>
+    
+    <script>
+        document.getElementById('flavor').addEventListener('change', function() {
+            const newFlavorDiv = document.getElementById('new_flavor_div');
+            if (this.value === 'new_flavor') {
+                newFlavorDiv.style.display = 'block';
+            } else {
+                newFlavorDiv.style.display = 'none';
+            }
+        });
+    </script>
+    
+    <a href="{% url 'view_suggestions' %}">Back to Suggestions</a>
+</body>
+</html>

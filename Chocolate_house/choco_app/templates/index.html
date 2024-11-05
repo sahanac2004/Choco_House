@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate House</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cta button:hover {
+            background-color: #6f3c10;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #4b3d3d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Chocolate House</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'add_flavor' %}">Add Flavor</a></li>
+            <li><a href="{% url 'view_flavors' %}">View Flavors</a></li>
+            <li><a href="{% url 'add_inventory' %}">Add Inventory</a></li>
+            <li><a href="{% url 'view_inventory' %}">View Inventory</a></li>
+            <li><a href="{% url 'add_suggestion' %}">Add Suggestion</a></li>
+            <li><a href="{% url 'view_suggestions' %}">View Suggestions</a></li>
+        </ul>
+    </nav>
+    <div class="description">
+        <p>At the Chocolate House, we believe in crafting the finest chocolates with the best ingredients. Explore our variety of flavors, manage your inventory, and share your suggestions to help us improve!</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Chocolate House. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Flavors</title>
+</head>
+<body>
+    <h1>Available Flavors</h1>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor.name }} - {% if flavor.seasonal %}Seasonal{% else %}Not Seasonal{% endif %}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Flavors</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+    
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #8b4513;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .action-links {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .add-back-links {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        .add-back-links:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flavors</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Flavor</th>
+                <th>Seasonal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flavor in flavors %}
+                <tr>
+                    <td>{{ flavor.name }}</td>
+                    <td>
+                        {% if flavor.seasonal %}
+                            {{ flavor.seasonal }}
+                        {% else %}
+                            Not Seasonal
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'update_flavor' flavor.id %}">Edit</a>
+                        <a href="{% url 'delete_flavor' flavor.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="add-back-links" href="{% url 'add_flavor' %}">Add New Flavor</a>
+    <a class="add-back-links" href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

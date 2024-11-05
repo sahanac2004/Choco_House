@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Flavor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+
+        form {
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #6f4c3e;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Flavor</h1>
+    <form method="POST" action="{% url 'update_flavor' flavor.id %}">
+        {% csrf_token %}
+        <label for="name">Flavor Name:</label>
+        <input type="text" id="name" name="name" value="{{ flavor.name }}" required>
+    
+        <label for="seasonal">Select Seasonal Category:</label>
+        <select name="seasonal" id="seasonal" required>
+            <option value="Spring" {% if flavor.seasonal == 'Spring' %}selected{% endif %}>Spring</option>
+            <option value="Summer" {% if flavor.seasonal == 'Summer' %}selected{% endif %}>Summer</option>
+            <option value="Autumn" {% if flavor.seasonal == 'Autumn' %}selected{% endif %}>Autumn</option>
+            <option value="Winter" {% if flavor.seasonal == 'Winter' %}selected{% endif %}>Winter</option>
+            <option value="No season" {% if flavor.seasonal == 'No season' %}selected{% endif %}>No season</option>
+        </select>
+    
+        <button type="submit">Update Flavor</button>
+    </form>
+    <a href="{% url 'view_flavors' %}">Back to Flavors</a>
+</body>
+</html>

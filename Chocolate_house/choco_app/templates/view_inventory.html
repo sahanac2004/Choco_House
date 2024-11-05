@@ -1,0 +1,105 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Inventory</title>
+</head>
+<body>
+    <h1>Ingredient Inventory</h1>
+    <ul>
+        {% for item in inventory %}
+            <li>{{ item.ingredient }}: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Inventory</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f0e3;
+            color: #4b3d3d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #8b4513;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .add-back-links {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        .add-back-links:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in inventory %}
+                <tr>
+                    <td>{{ item.ingredient }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <a href="{% url 'update_inventory' item.id %}">Edit</a>
+                        <a href="{% url 'delete_inventory' item.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="add-back-links" href="{% url 'add_inventory' %}">Add New Inventory Item</a>
+    <a class="add-back-links" href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
