@@ -110,18 +110,14 @@ SQLite documentation for database management.
 
 ## requirements.txt and Dockerfile
 Instructions for Use
-1.Create the Files:
 
-Create a new file named requirements.txt in the root of your project and copy the contents provided above.
-Create a new file named Dockerfile in the root of your project and copy the contents provided above.
+1.Add Additional Dependencies: If your application uses any other libraries (like Django REST framework, etc.), make sure to list them in the requirements.txt file.
 
-2.Add Additional Dependencies: If your application uses any other libraries (like Django REST framework, etc.), make sure to list them in the requirements.txt file.
-
-3.Building the Docker Image: Once you have these files in place, you can build your Docker image using the command:
+2.Building the Docker Image: Once you have these files in place, you can build your Docker image using the command:
 
 docker build -t chocolate-house-app .
 
-4.Running the Docker Container: After building the image, you can run it using:
+3.Running the Docker Container: After building the image, you can run it using:
 
 docker run -p 8000:8000 chocolate-house-app
 This setup will provide you with a Docker container running your Django application, accessible at http://127.0.0.1:8000/
