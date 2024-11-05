@@ -1,4 +1,3 @@
-# Choco_House
 # Chocolate House Application
 
 This is a simple Django application for managing a fictional chocolate house. The application allows users to manage seasonal flavor offerings, ingredient inventory, and customer flavor suggestions with allergy concerns. The data is managed using SQLite.
@@ -45,7 +44,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-##Docker Setup
+# Docker Setup
 This application can also be run in a Docker container. Follow these steps to set it up:
 
 1. Build the Docker image:
@@ -60,7 +59,7 @@ docker run -p 8000:8000 chocolate-house-app
 
 Open your web browser and go to http://127.0.0.1:8000/.
 
-##Testing the Application
+# Testing the Application
 To validate the application, you can follow these steps:
 
 1. Add Seasonal Flavors:
@@ -94,21 +93,21 @@ Ensure the suggestion appears in the /suggestions/ list.
 Try adding a suggestion without selecting a flavor or entering a new flavor name to validate error handling.
 Attempt to delete a flavor or inventory item that does not exist to ensure proper error handling.
 
-##Code Documentation
+# Code Documentation
 The code is structured into views.py, urls.py, and models.py files.
 Each function in views.py is documented with comments explaining its purpose and behavior.
 Models in models.py define the database schema for flavors, inventory, and suggestions.
 
-##Edge Cases Handled
+# Edge Cases Handled
 Flavor suggestions require a selected flavor or a new flavor name.
 Updating and deleting operations check for the existence of the object before proceeding.
 Error messages are displayed when required fields are not filled.
 
-##Acknowledgements
+# Acknowledgements
 Django documentation for guidance on building web applications.
 SQLite documentation for database management.
 
-## requirements.txt and Dockerfile
+# requirements.txt and Dockerfile
 Instructions for Use
 
 1.Add Additional Dependencies: If your application uses any other libraries (like Django REST framework, etc.), make sure to list them in the requirements.txt file.
