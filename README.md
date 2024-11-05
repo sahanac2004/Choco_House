@@ -28,6 +28,7 @@ Create a simple Python application for a fictional chocolate house that uses SQL
 ```bash
 git clone https://github.com/sahanac2004/Choco_House.git
 cd Choco_House
+cd Chocolate_house
 ```
 
 2. Create a virtual environment (optional but recommended):
