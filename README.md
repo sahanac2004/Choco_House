@@ -154,20 +154,10 @@ The code is structured into views.py, urls.py, and models.py files.
 Django documentation for guidance on building web applications.
 SQLite documentation for database management.
 
-# requirements.txt and Dockerfile
-Instructions for Use
+# requirements.txt 
+Add Additional Dependencies: If your application uses any other libraries (like Django REST framework, etc.), make sure to list them in the requirements.txt file.
 
-1.Add Additional Dependencies: If your application uses any other libraries (like Django REST framework, etc.), make sure to list them in the requirements.txt file.
 
-2.Building the Docker Image: Once you have these files in place, you can build your Docker image using the command:
-```bash
-docker build -t chocolate-house-app .
-```
-3.Running the Docker Container: After building the image, you can run it using:
-```bash
-docker run -p 8000:8000 chocolate-house-app
-```
-This setup will provide you with a Docker container running your Django application, accessible at http://127.0.0.1:8000/
 
 **Contact**
 For questions or suggestions, please contact sahanac629@gmail.com.
