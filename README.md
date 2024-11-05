@@ -18,10 +18,11 @@ This is a simple Django application for managing a fictional chocolate house. Th
 ## Installation
 
 1. Clone the repository:
+```bash
+git clone https://github.com/sahanac2004/Choco_House.git
+cd Choco_House
+```
 
-   ```bash
-   git clone https://github.com/sahanac2004/Choco_House.git
-   cd Choco_House
 2. Create a virtual environment (optional but recommended):
 ```bash
 python -m venv venv
